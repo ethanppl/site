@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <title>Ethan Pang</title>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <base target="_blank">
+  </head>
+  <body>
+    <div class="hero">
+      <div>
+        <a href="#" class="rm-text-styling" target="_self">
+          <h1>Hello, I'm Ethan &#128075;</h1>
+        </a>
+      </div>
+      <div style="max-width: 8rem;">
+        <a href="#" class="rm-text-styling" target="_self">
+          <img src="/images/ethanppl.jpeg" class="image"/>
+        </a>
+      </div>
+    </div>
+
+    <h2>About me</h2>
+    <p>
+      I am a software engineer based in Hong Kong. I hold a dual degree in
+      computer science and business management from HKUST.
+    </p>
+    <p>
+      I like programming and I have been doing it for almost ten years. It's
+      great to see things built with computers. I currently work at a startup,
+      <a href="https://gitstart.com/">GitStart (YC S19)</a>, building developer
+      tools, creating AI agents to assist in the software development lifecycle,
+      and designing systems and applications that support developer work.
+    </p>
+    <p>
+      Previously, I worked at Credit Suisse on big data processing pipeline, 3D
+      visualization of meteorology datasets in the Hong Kong Observatory, and
+      setting up indoor autonomous robots in a local startup. I was a member of
+      the <a href="https://robotics.hkust.edu.hk/">HKUST robotics team</a>,
+      building software for embedded systems and controls with ROS for the ROV
+      prototype. <a
+      href="https://seng.hkust.edu.hk/news/20190704/hkust-rov-team-won-world-championship-again-mate-international-rov-competition"
+      >The reward was we won the 2019 MATE ROV World Champion</a>!
+    </p>
+    <p>
+      Besides software, I am interested in astronomy, finance, Formula 1, movies
+      and books. When I have free time, I worked on some projects on the side
+      for fun and learning.
+    </p>
+
+    <h2>Projects</h2>
+    <p>
+      Things I worked on over the last few years:
+    </p>
+    <ul>
+      <li>
+        <a href="#playground" target="_self">Playground: online real-time multiplayer games</a> (2024)
+      </li>
+      <li>
+        <a href="#wiki" target="_self">Wiki and Blog: collecting, categorizing and sharing interesting things</a> (2023)
+      </li>
+      <li>
+        <a href="#cong1-kit3" target="_self">Cong1 Kit3 Practice: a Cangjie input method practice tool</a> (2023)
+      </li>
+      <li>
+        <a href="#solidity-rps" target="_self">Solidity Smart Contract for Rock, Paper, Scissors</a> (2022)
+      </li>
+    </ul>
+
+    <a href="https://playground.ethanppl.com">
+      <h3 id="playground">Playground (2024)</h3>
+    </a>
+    <p>
+      This is a platform for online, real-time, turn-based, multiplayer game. 
+      Making games that my partner and I can play on phone rather than on pen
+      and paper.  You can find <a href="https://playground.ethanppl.com/games"
+      >all games here</a>.
+    </p>
+    <p>
+      There is a <a href="https://playground.ethanppl.com/games/super-hangman"
+      >super hangman game</a> we came up with that I don't think it exists out
+      there. I plan to add more games and welcome suggestions for it :)
+    </p>
+    <a href="https://playground.ethanppl.com/games">
+      <img class="image" src="/images/playground.png" width="100%" />
+    </a>
+    <p>
+      I came up with this idea of building a playground platform after knowing
+      what <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html"
+      >Phoenix LiveView</a> in <a href="https://elixir-lang.org/" >Elixir</a> is
+      capable of doing. As long as the game is turn-based, then the playground
+      engine can handle creating and joining rooms, initializing and running the
+      games, storing and passing the state for all the games. Each game then
+      defines metadata like the name, and functions that initialize the game
+      state and handle how a move alter the game state, and finally a visual
+      component to render the screen given the game state. The beauty is the
+      engine doesn't need to know how each game works, and the game module
+      doesn't need to know how the state is stored or passed around.
+    </p>
+    <p>
+      Underlying the engine spawn a <a
+      href="https://hexdocs.pm/elixir/1.15.0/GenServer.html" >GenServer
+      process</a> for each room. Any action in the room like a new move made by
+      a player in the game sends a message to the room process. The process
+      dispatches the move to the relevant game module that handle the actions
+      received. When the state is updated, the process persists it to the
+      database and publish the update with <a
+      href="https://hexdocs.pm/phoenix_pubsub/Phoenix.PubSub.html" >Phoenix
+      PubSub</a>.  The LiveView page then subscribe to the topic for that room
+      and then render the page accordingly. 
+    </p>
+    <p>
+      This is also the first project I <a
+      href="https://github.com/ethanppl/playground/blob/main/DEPLOYMENT.md"
+      >self-host it</a>. It is deployed with a Docker image in a Hetzner box,
+      with <a href="https://nginx.org/en/" >Nginx</a> in front of it as a
+      reverse proxy. This opens up a rabbit hole for me to explore self-hosting,
+      having me hosting a private VPN, plausible, and other tools in a single
+      VM. 
+    </p>
+
+    <a href="https://wiki.ethanppl.com">
+      <h3 id="wiki">Wiki and Blogs (2023)</h3>
+    </a>
+    <p>
+      This is a place I collect and categorize what I found interesting online.
+      And maybe some of these are helpful to my future self and others. <a
+      href="https://wiki.ethanppl.com">The Wiki</a> contains over 1000 links,
+      loosely categorized into almost 100 domains. Occasionally, I <a
+      href="https://wiki.ethanppl.com">write blogs</a> there too, to share some
+      lessons learned and some thoughts.  This wiki is inspired by <a
+      href="https://wiki.nikiv.dev/" >wiki.nikiv.dev/</a> (sadly, most of the
+      resources are behind a paywall now).
+    </p>
+    <a href="https://wiki.ethanppl.com">
+      <img class="image" src="/images/wiki.png" width="100%" />
+    </a>
+    <p>
+      Right now, I particularly like the pages about <a
+      href="https://wiki.ethanppl.com/astronomy">astronomy</a>, <a
+      href="https://wiki.ethanppl.com/learning/growth/growth" >personal
+      growth</a>, and <a
+      href="https://wiki.ethanppl.com/computers/programming/software-design/software-design"
+      >software design</a> in this wiki. There are also some rabbit hole that I
+      got into like <a
+      href="https://wiki.ethanppl.com/computers/cellular-automaton" >cellular
+      automaton</a>, <a href="https://wiki.ethanppl.com/interesting/counterfeit"
+      >stories of counterfeit</a>, or <a
+      href="https://wiki.ethanppl.com/interesting/write-ups" >various write-ups
+      and stories people publish</a>. I am still updating the wiki, although not
+      as frequent as I used to. Have a look, and you might find an interesting
+      rabbit hole there!
+    </p>
+    <p>
+      The website is generated with <a href="https://docusaurus.io/"
+     >Docusaurus</a>. You may check out <a
+      href="https://github.com/ethanppl/wiki">the files
+      here</a>. 
+    </p>
+
+    <a href="https://cong1kit3.ethanppl.com">
+      <h3 id="cong1-kit3">Cong1 Kit3 Practice (2023)</h3>
+    </a>
+    <p>
+      This is a <a href="https://en.wikipedia.org/wiki/Cangjie_input_method"
+      >Cangjie</a> input method practice tool (pronounced as Cong1 Kit3 in
+      Cantonese). I just want one with no ads, without rarely used characters,
+      and friendly for phones but doesn't require me to install an app. I can't
+      find one, so <a href="https://cong1kit3.ethanppl.com">I built one
+      myself</a>. It's not perfect, but it works. 
+    </p>
+    <a href="https://cong1kit3.ethanppl.com">
+      <img class="image" src="/images/cong1kit3.png" width="90%" />
+    </a>
+    <p>
+      And a friend strongly recommended me to use <a
+      href="https://elm-lang.org/">Elm</a>, so I did, and I find it quite nice!
+      I like the functional programming way of immutability and no side effects.
+      Strong static types system with friendly and helpful error messages is
+      also amazing. <a href="https://github.com/ethanppl/cong1-kit3">All the
+      code are public here</a>. 
+    </p>
+
+    <a href="https://medium.com/coinsbench/solidity-smart-contract-for-rock-paper-scissors-6420f43d534d">
+      <h3 id="solidity-rps">Solidity smart contract for rock paper scissors (2022)</h3>
+    </a>
+    <p>
+      I wrote <a
+      href="https://medium.com/coinsbench/solidity-smart-contract-for-rock-paper-scissors-6420f43d534d"
+      >this blog</a> about how to write a smart contract for playing rock paper
+      scissors on blockchain fairly. Cheating is impossible despite each
+      publicly make their move at different time.
+    </p>
+    <p>
+      It was originally part of an assignment in a course I took about
+      blockchain.  I added some touches and thought it would be interesting to
+      share what I learned about designing smart contracts. I still find it
+      interesting how computer science technologies are applied in blockchain
+      and the design of blockchain and its applications involves game theory to
+      ensure cooperation and integrity of the system.
+    </p>
+    <p>
+      <a
+      href="https://gist.github.com/ethanppl/58fdc4b007647cfde3b63e1bcd1449f4"
+      >You can find the full contract in this gist.</a>
+    </p>
+
+    <div class="footer">
+      <div>
+        &#169; Ethan Pang | 2024 
+      </div>
+      <div>
+        <a href="https://linkedin.com/in/ethanppl">LinkedIn</a>,
+        <a href="https://github.com/ethanppl/">GitHub</a>, 
+        <a href="mailto:hi@ethanppl.com">email</a>
+      </div>
+    </div>
+  </body>
+</html>
