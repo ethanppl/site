@@ -1,9 +1,9 @@
 body {
   color: #04151F;
   background: #FEFAF5;
-  font: 100% monospace;
+  font: 100% system-ui;
   padding: 4rem 1rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
 }
 
 /* unvisited link */
@@ -17,7 +17,8 @@ a:visited {
 }
 
 h1 {
-  font: 900 2rem system-ui;
+  font: 900 2rem;
+  line-height: 3rem;
 }
 
 h2 {
@@ -27,8 +28,7 @@ h2 {
 }
 
 h3 {
-  margin-top: 2rem;
-  padding-top: 1rem;
+  margin-top: 3rem;
 }
 
 p {
@@ -43,7 +43,7 @@ p {
 .image {
   display: block;
   border-radius: 0.5rem;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   width: 85%;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
@@ -70,9 +70,9 @@ p {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 45rem) {
   body {
-    width: 50%;
+    width: 45rem;
     margin: auto;
   }
 
