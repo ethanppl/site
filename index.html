@@ -40,37 +40,39 @@
 
     <h2>About me</h2>
     <p>
-      I am a software engineer based in Hong Kong. I hold a dual degree in
-      computer science and business management from HKUST.
+      I am a software engineer based in Hong Kong. I enjoy coding, learning, and
+      exploring new technologies, and I have been doing so for almost ten years.
     </p>
     <p>
-      I like programming and I have been doing it for almost ten years. It's
-      great to see things built with computers. I currently work at <a
-      href="https://www.nex.inc/">Nex</a>, supporting developers building <a
-      href="https://www.nexplayground.com/">immersive games</a> for kids and
-      families. 
+      Currently, I work at <a href="https://www.nex.inc/">Nex</a>, supporting
+      both internal and external studios in building <a
+      href="https://www.nexplayground.com/">active and immersive games</a> for
+      kids and families. This includes designing and developing system-level
+      features for consoles, shared packages for games, and various development
+      tools.
     </p>
     <p>
-      Previously, I worked at <a href="https://gitstart.com/">GitStart</a>,
-      building developer tools, creating AI agents to assist in the software
-      development lifecycle, and designing systems and applications that support
-      developer work.
+      Previously, I worked at <a href="https://gitstart.com/">GitStart</a> for a
+      few years, building developer tools, creating AI agents to assist in the
+      software development lifecycle, and designing systems and applications to
+      support developers' work.
     </p>
     <p>
-      I had internship in multiple places. I worked on redesigning big data
-      processing pipeline at Credit Suisse, 3D visualization of meteorology
-      datasets in the Hong Kong Observatory, and setting up indoor autonomous
-      robots in a local robotics startup. I was a member of the <a
-      href="https://robotics.hkust.edu.hk/">HKUST robotics team</a>, building
-      software for embedded systems and controls with ROS for the ROV prototype.
-      <a
+      I hold a dual degree in Computer Science and Business Management from
+      HKUST and have interned in multiple places. I worked on redesigning big
+      data processing pipelines at Credit Suisse, developing 3D visualizations
+      of meteorological datasets in the Hong Kong Observatory, and setting up
+      indoor autonomous robots at a local robotics startup. I was also a member
+      of the <a href="https://robotics.hkust.edu.hk/">HKUST robotics team</a>,
+      where I developed software for embedded systems and controls with ROS for
+      the ROV prototype.  <a
       href="https://seng.hkust.edu.hk/news/20190704/hkust-rov-team-won-world-championship-again-mate-international-rov-competition"
-      >The reward was we won the 2019 MATE ROV World Champion</a>!
+      >And we won the 2019 MATE ROV World Championship</a>!
     </p>
     <p>
-      Besides software, I am interested in astronomy, finance, Formula 1, movies
-      and books. When I have free time, I worked on some projects on the side
-      for fun and learning.
+      Besides software, I like to run. I am also interested in astronomy,
+      finance, Formula 1, movies, and books. In my free time, I enjoy working on
+      side projects for fun and learning.
     </p>
 
     <h2>Projects</h2>
@@ -139,12 +141,11 @@
     </p>
     <p>
       This is also the first project I <a
-      href="https://github.com/ethanppl/playground/blob/main/DEPLOYMENT.md"
-      >self-host it</a>. It is deployed with a Docker image in a Hetzner box,
-      with <a href="https://nginx.org/en/" >Nginx</a> in front of it as a
-      reverse proxy. This opens up a rabbit hole for me to explore self-hosting,
-      having me hosting a private VPN, plausible, and other tools in a single
-      VM. 
+      href="https://wiki.ethanppl.com/blog/2025/05/25/self-host" >self-hosted
+      it</a>. It is deployed with a Docker image in a Hetzner box, with <a
+      href="https://nginx.org/en/" >Nginx</a> in front of it as a reverse proxy.
+      This opens up a rabbit hole for me to explore self-hosting, having me
+      hosting a private VPN, plausible, and other tools in a single VM.
     </p>
 
     <a href="https://wiki.ethanppl.com">
@@ -239,15 +240,20 @@
       >You can find the full contract in this gist.</a>
     </p>
 
-    <div class="footer">
+    <footer class="footer">
       <div>
-        &#169; Ethan Pang | 2025 
+        &#169; Ethan Pang | <span id="year"></span>
       </div>
       <div>
         <a href="https://linkedin.com/in/ethanppl">LinkedIn</a>,
         <a href="https://github.com/ethanppl/">GitHub</a>, 
         <a href="mailto:hi@ethanppl.com">email</a>
       </div>
-    </div>
+
+      <script>
+        let currentYear = new Date().getFullYear();
+        document.getElementById("year").textContent = currentYear;
+      </script>
+    </footer>
   </body>
 </html>
