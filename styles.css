@@ -1,9 +1,12 @@
 body {
   color: #04151F;
   background: #FEFAF5;
-  font: 100% system-ui;
+  font: 90% Merriweather, serif;
+  font-weight: 400;
   padding: 4rem 1rem;
   line-height: 1.5rem;
+  max-width: min(72ch, 100% - 4rem);
+  margin-inline: auto;
 }
 
 /* unvisited link */
@@ -17,17 +20,21 @@ a:visited {
 }
 
 h1 {
-  font: 900 2rem;
+  font-size: 2rem;
+  font-weight: 900;
   line-height: 3rem;
+  word-wrap: text-balance;
 }
 
 h2 {
+  font-weight: 700;
   margin-top: 4.5rem;
   padding-bottom: 0.25rem;
   border-bottom: 2px solid #A65E3B;
 }
 
 h3 {
+  font-weight: 600;
   margin-top: 3rem;
 }
 
@@ -71,12 +78,7 @@ p {
 }
 
 @media screen and (min-width: 45rem) {
-  body {
-    width: 45rem;
-    margin: auto;
-  }
-
   h1 {
-    font: 900 3rem system-ui;
+    font-size: 3rem;
   }
 }
